@@ -11,6 +11,7 @@ public class Constants {
 	public static final String ACCOUNT_ACTIONS_HISTORY = "ACCOUNT_ACTIONS_HISTORY";
 	
 	public enum Cookie {
+		
 		SHOPPING_CART("iSCC", 60 * 60 * 24 * 365);
 		
 		private final String name;

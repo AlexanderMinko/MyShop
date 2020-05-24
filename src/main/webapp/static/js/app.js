@@ -1,11 +1,10 @@
-;
-$(function() {
-	var init = function() {
+;$(function(){
+	var init = function(){
 		initBuyBtn();
 		$('#addToCart').click(addProductToCart);
 		$('#addProductPopup .count').change(calculateCost);
 		$('#loadMore').click(loadMoreProducts);
-		initSearchForm();
+		selectAllCheck();
 		$('#goSearch').click(goSearch);
 		$('.remove-product').click(removeProductFromCart);
 	};
@@ -14,30 +13,28 @@ $(function() {
 		var idProduct = $(this).attr('data-id-product');
 		var product = $('#product' + idProduct);
 		$('#addProductPopup').attr('data-id-product', idProduct);
-		$('#addProductPopup .product-image').attr('src',
-				product.find('.thumbnail img').attr('src'));
+		$('#addProductPopup .product-image').attr('src', product.find('img').attr('src'));
 		$('#addProductPopup .name').text(product.find('.name').text());
-		var price = product.find('.price').text();
-		$('#addProductPopup .price').text(price);
+		$('#addProductPopup .price').text(product.find('.price').text());
 		$('#addProductPopup .category').text(product.find('.category').text());
 		$('#addProductPopup .producer').text(product.find('.producer').text());
 		$('#addProductPopup .count').val(1);
-		$('#addProductPopup .cost').text(price);
+		$('#addProductPopup .cost').text(product.find('.price').text());
 		$('#addToCart').removeClass('hidden');
 		$('#addToCartIndicator').addClass('hidden');
-		$('#addProductPopup').modal({
-			show : true
-		});
+		$('#addProductPopup').modal('show');
 	};
-	var initBuyBtn = function() {
-		$('.buy-btn').click(showAddProductPopup);
+
+	var initBuyBtn = function(){
+		$('.buy-btn').on('click', showAddProductPopup);
 	};
-	var addProductToCart = function() {
+
+	var addProductToCart = function(){
 		var idProduct = $('#addProductPopup').attr('data-id-product');
 		var count = $('#addProductPopup .count').val();
 		$('#addToCart').addClass('hidden');
 		$('#addToCartIndicator').removeClass('hidden');
-		setTimeout(function() {
+		setTimeout(function(){
 			var data = {
 				totalCount : count,
 				totalCost : 2000
@@ -48,137 +45,123 @@ $(function() {
 			$('#addProductPopup').modal('hide');
 		}, 800);
 	};
-	var calculateCost = function() {
+
+	var calculateCost = function(){
 		var priceStr = $('#addProductPopup .price').text();
 		var price = parseFloat(priceStr.replace('$', ' '));
 		var count = parseInt($('#addProductPopup .count').val());
-		var min = parseInt($('#addProductPopup .count').attr('min'));
-		var max = parseInt($('#addProductPopup .count').attr('max'));
-		if (count >= min && count <= max) {
-			var cost = price * count;
-			$('#addProductPopup .cost').text('$ ' + cost);
-		} else {
-			$('#addProductPopup .count').val(1);
-			$('#addProductPopup .cost').text(priceStr);
-		}
+		var cost = price * count;
+		$('#addProductPopup .cost').text('$ ' + cost.toFixed(2));
+
 	};
-	var loadMoreProducts = function() {
+
+	var loadMoreProducts = function(){
 		$('#loadMore').addClass('hidden');
 		$('#loadMoreIndicator').removeClass('hidden');
-		$.ajax({
-			url : '/ajax/html/more/products',
-			success : function(html) {
-				$('#productList').append(html);
-				$('#loadMoreIndicator').addClass('hidden');
-				$('#loadMore').removeClass('hidden');
-			}
-		});
+		setTimeout(function(){
+			$('#loadMoreIndicator').addClass('hidden');
+			$('#loadMore').removeClass('hidden');
+		}, 3000);
 	};
-	var initSearchForm = function() {
-		$('#allCategories').click(
-				function() {
-					$('.categories .search-option').prop('checked',
-							$(this).is(':checked'));
-				});
-		$('.categories .search-option').click(function() {
+
+	var selectAllCheck = function(){
+		$('#allCategories').on('click', function(){
+			$('.categories .search-option').prop('checked', $(this).is(':checked'))
+		});
+		$('.categories .search-option').on('click', function(){
 			$('#allCategories').prop('checked', false);
 		});
-		$('#allProducers').click(
-				function() {
-					$('.producers .search-option').prop('checked',
-							$(this).is(':checked'));
-				});
-		$('.producers .search-option').click(function() {
+
+		$('#allProducers').on('click', function(){
+			$('.producers .search-option').prop('checked', $(this).is(':checked'))
+		});
+		$('.producers .search-option').on('click', function(){
 			$('#allProducers').prop('checked', false);
 		});
+		
 	};
-	var goSearch = function() {
-		var isAllSelected = function(selector) {
+
+	var goSearch = function(){
+		var isAllSelected = function(selector){
 			var unchecked = 0;
-			$(selector).each(function(index, value) {
-				if (!$(value).is(':checked')) {
+			$(selector).each(function(index, value){
+				if(!$(value).is(':checked')){
 					unchecked++;
 				}
 			});
 			return unchecked === 0;
 		};
-		if (isAllSelected('.categories .search-option')) {
+		if(isAllSelected('.categories .search-option')){
 			$('.categories .search-option').prop('checked', false);
 		}
-		if (isAllSelected('.producers .search-option')) {
+
+		if(isAllSelected('.producers .search-option')){
 			$('.producers .search-option').prop('checked', false);
 		}
+
 		$('form.search').submit();
 	};
-	var confirm = function(msg, okFunction) {
-		if (window.confirm(msg)) {
+
+	var confirm = function(msg, okFunction){
+		if(window.confirm(msg)){
 			okFunction();
 		}
+		
 	};
-	var removeProductFromCart = function() {
+
+	var removeProductFromCart = function(){
 		var btn = $(this);
-		confirm('Are you sure?', function() {
+		confirm('Are you sure?', function(){
 			executeRemoveProduct(btn);
 		});
 	};
-	var refreshTotalCost = function() {
+
+	var refreshTotalCost = function(){
 		var total = 0;
-		$('#shoppingCart .item').each(
-				function(index, value) {
-					var count = parseInt($(value).find('.count').text());
-					var price = parseFloat($(value).find('.price').text()
-							.replace('$', ' '));
-					var val = price * count;
-					total = total + val;
-				});
-		$('#shoppingCart .total').text('$' + total);
+		$('#shoppingCart .item').each(function(index, value){
+			var count = parseInt($(value).find('.count').text());
+			var price = parseFloat($(value).find('.price').text().replace('$', ' '));
+			var val = price * count;
+			total = total + val;
+		});
+		$('#shoppingCart .total').text('$ ' + total)
 	};
-	var executeRemoveProduct = function(btn) {
+
+	var executeRemoveProduct = function(btn){
 		var idProduct = btn.attr('data-id-product');
 		var count = btn.attr('data-count');
 		btn.removeClass('btn-danger');
 		btn.removeClass('btn');
 		btn.addClass('load-indicator');
-		var text = btn.text();
+		var str = btn.text();
 		btn.text('');
-		btn.off('click');
+		var currentCount = parseInt($('#product' + idProduct + ' .count').text());
+		var cost = parseInt($('#product' + idProduct + ' .price').text());
 
-		setTimeout(function() {
+		setTimeout(function(){
 			var data = {
-				totalCount : 1,
-				totalCost : 1
+				totalCount : count,
+				totalCost : cost
 			};
-			if (data.totalCount === 0) {
+			if($('#shoppingCart .item').length === 1){
 				window.location.href = 'products.html';
-			} else {
-				var prevCount = parseInt($('#product' + idProduct + ' .count')
-						.text());
-				var remCount = parseInt(count);
-				if (remCount === prevCount) {
+			}else{
+				var removeCount = parseInt(count);
+				var result = currentCount - removeCount;
+				btn.removeClass('load-indicator');
+				btn.addClass('btn-danger');
+				btn.addClass('btn');
+				btn.text(str);
+				if(result <= 0){
 					$('#product' + idProduct).remove();
-
-					//
-					if ($('#shoppingCart .item').length === 0) {
-						window.location.href = 'products.html';
-					}
-					//
 				} else {
-					btn.removeClass('load-indicator');
-					btn.addClass('btn-danger');
-					btn.addClass('btn');
-					btn.text(text);
-					btn.click(removeProductFromCart);
-					$('#product' + idProduct + ' .count').text(
-							prevCount - remCount);
-					if (prevCount - remCount == 1) {
-						$('#product' + idProduct + ' a.remove-product.all')
-								.remove();
-					}
+					$('#product' + idProduct + ' .count').text(result);
 				}
-				refreshTotalCost();
-			}
-		}, 1000);
-	}
 
+			}refreshTotalCost();
+				
+		}, 800);
+	}
+	
 	init();
 });

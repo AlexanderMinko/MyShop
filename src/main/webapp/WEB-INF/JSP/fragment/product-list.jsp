@@ -1,377 +1,320 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"
-	isELIgnored="false"%>
-<%@ taglib prefix="myshop" tagdir="/WEB-INF/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+	isELIgnored="false" trimDirectiveWhitespaces="true"%>
 
 <div class="row">
 	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
-		<!-- PRODUCT DATA -->
-		<div id="product278009" class="panel panel-default product">
+		<div id="product1" class="panel panel-default product">
 			<div class="panel-body">
 				<div class="thumbnail">
-					<img src="/media/736d61727470686f6e65.jpg" alt="Prestigio SH398187">
+					<img src="/media/6e6f7465626f6f6b.jpg" alt="notebook">
 					<div class="desc">
 						<div class="cell">
 							<p>
-								<span class="title">Details</span>Monitor diagonal 6.0" /
-								Camera: 3.2Mp / RAM: 4 Gb / Orange / 1100 mA/h / Weight 720 g /
-								WiFi / Bluetooth / Dictophone / USB
+								<span class="title">Details</span> Notebook
 							</p>
 						</div>
 					</div>
 				</div>
-				<h4 class="name">Prestigio SH398187</h4>
-				<div class="code">Code: 278009</div>
-				<div class="price">$ 570.00</div>
-				<a class="btn btn-primary pull-right buy-btn"
-					data-id-product="278009">Buy</a>
-				<div class="list-group">
-					<span class="list-group-item"> <small>Category:</small> <span
-						class="category">Smartphone</span></span> <span class="list-group-item">
-						<small>Producer:</small> <span class="producer">Prestigio</span>
-					</span>
-				</div>
+				<div class="name">Asus TUF Gaming</div>
+				<div class="code">Code: 27 000</div>
+				<div class="price">$ 900.24</div>
+				<a class="btn btn-primary pull-right buy-btn" data-id-product="1">Buy</a>
+				<ul class="list-group">
+					<li class="list-group-item"><small>Category:</small> <span
+						class="category">Notebook</span></li>
+					<li class="list-group-item"><small>Producer:</small> <span
+						class="producer">Asus</span></li>
+				</ul>
 			</div>
 		</div>
-		<!-- /PRODUCT DATA -->
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
-		<!-- PRODUCT DATA -->
-		<div id="product278014" class="panel panel-default product">
+		<div id="product2" class="panel panel-default product">
 			<div class="panel-body">
 				<div class="thumbnail">
-					<img src="/media/652d626f6f6b.jpg" alt="EvroMedia NU6353951">
+					<img src="/media/lenovo_za4g0055ua_images_15246713273.jpg"
+						alt="Iphone">
 					<div class="desc">
 						<div class="cell">
 							<p>
-								<span class="title">Details</span>Monitor diagonal 9" / Matrix
-								type: E lnk Pearl / Resolution: 1600x1200 / Memory 6 GB / Weight
-								190 g
+								<span class="title">Details</span> Iphone
 							</p>
 						</div>
 					</div>
 				</div>
-				<h4 class="name">EvroMedia NU6353951</h4>
-				<div class="code">Code: 278014</div>
-				<div class="price">$ 2710.00</div>
-				<a class="btn btn-primary pull-right buy-btn"
-					data-id-product="278014">Buy</a>
-				<div class="list-group">
-					<span class="list-group-item"> <small>Category:</small> <span
-						class="category">E-book</span></span> <span class="list-group-item">
-						<small>Producer:</small> <span class="producer">EvroMedia</span>
-					</span>
-				</div>
+				<div class="name">Lenovo tablet PC</div>
+				<div class="code">Code: 27 000</div>
+				<div class="price">$ 200.00</div>
+				<a class="btn btn-primary pull-right buy-btn" data-id-product="2">Buy</a>
+				<ul class="list-group">
+					<li class="list-group-item"><small>Category:</small> <span
+						class="category">tablet</span></li>
+					<li class="list-group-item"><small>Producer:</small> <span
+						class="producer">Lenovo</span></li>
+				</ul>
 			</div>
 		</div>
-		<!-- /PRODUCT DATA -->
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
-		<!-- PRODUCT DATA -->
-		<div id="product278018" class="panel panel-default product">
+		<div id="product3" class="panel panel-default product">
 			<div class="panel-body">
 				<div class="thumbnail">
-					<img src="/media/736d61727470686f6e65.jpg" alt="Huawei BIC2404">
+					<img src="/media/asus_90lm04i0_b01170_images_14640618992.jpg"
+						alt="Product Name">
 					<div class="desc">
 						<div class="cell">
 							<p>
-								<span class="title">Details</span>Monitor diagonal 4.4" /
-								Camera: 3.2Mp / RAM: 1 Gb / Blue / 1000 mA/h / Weight 320 g / 2
-								Sim cards / WiFi / USB / FM receiver / Dictophone / 3G
+								<span class="title">Details</span> Monitor
 							</p>
 						</div>
 					</div>
 				</div>
-				<h4 class="name">Huawei BIC2404</h4>
-				<div class="code">Code: 278018</div>
-				<div class="price">$ 370.00</div>
-				<a class="btn btn-primary pull-right buy-btn"
-					data-id-product="278018">Buy</a>
-				<div class="list-group">
-					<span class="list-group-item"> <small>Category:</small> <span
-						class="category">Smartphone</span></span> <span class="list-group-item">
-						<small>Producer:</small> <span class="producer">Huawei</span>
-					</span>
-				</div>
+				<div class="name">Asus TUF Monitor</div>
+				<div class="code">Code: 27 000</div>
+				<div class="price">$ 250.00</div>
+				<a class="btn btn-primary pull-right buy-btn" data-id-product="3">Buy</a>
+				<ul class="list-group">
+					<li class="list-group-item"><small>Category:</small> <span
+						class="category">Monitor</span></li>
+					<li class="list-group-item"><small>Producer:</small> <span
+						class="producer">Asus</span></li>
+				</ul>
 			</div>
 		</div>
-		<!-- /PRODUCT DATA -->
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
-		<!-- PRODUCT DATA -->
-		<div id="product278026" class="panel panel-default product">
+		<div id="product4" class="panel panel-default product">
 			<div class="panel-body">
 				<div class="thumbnail">
-					<img src="/media/7461626c6574.jpg" alt="Apple QR35378150">
+					<img src="/media/apple_iphone_se_64gb_white_images_17801797603.jpg"
+						alt="Product Name">
 					<div class="desc">
 						<div class="cell">
 							<p>
-								<span class="title">Details</span>Monitor 9" / RAM 3 GB / HDD
-								370 GB / Black / Weight 60 g / Bluetooth / 3G / USB / GPS
+								<span class="title">Details</span> Monitor
 							</p>
 						</div>
 					</div>
 				</div>
-				<h4 class="name">Apple QR35378150</h4>
-				<div class="code">Code: 278026</div>
-				<div class="price">$ 2630.00</div>
-				<a class="btn btn-primary pull-right buy-btn"
-					data-id-product="278026">Buy</a>
-				<div class="list-group">
-					<span class="list-group-item"> <small>Category:</small> <span
-						class="category">Tablet</span></span> <span class="list-group-item">
-						<small>Producer:</small> <span class="producer">Apple</span>
-					</span>
-				</div>
+				<div class="name">Apple iPhone</div>
+				<div class="code">Code: 27 000</div>
+				<div class="price">$ 1000.00</div>
+				<a class="btn btn-primary pull-right buy-btn" data-id-product="4">Buy</a>
+				<ul class="list-group">
+					<li class="list-group-item"><small>Category:</small> <span
+						class="category">Smartphone</span></li>
+					<li class="list-group-item"><small>Producer:</small> <span
+						class="producer">Apple</span></li>
+				</ul>
 			</div>
 		</div>
-		<!-- /PRODUCT DATA -->
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
-		<!-- PRODUCT DATA -->
-		<div id="product278031" class="panel panel-default product">
+		<div id="product5" class="panel panel-default product">
 			<div class="panel-body">
 				<div class="thumbnail">
-					<img src="/media/7461626c6574.jpg" alt="Acer JEQ0979832">
+					<img src="https://via.placeholder.com/400x400" alt="Product Name">
 					<div class="desc">
 						<div class="cell">
 							<p>
-								<span class="title">Details</span>Monitor 7" / RAM 4 GB / HDD
-								320 GB / Silver / Weight 260 g / HDMI / GPS / Bluetooth
+								<span class="title">Details</span> Monitor
 							</p>
 						</div>
 					</div>
 				</div>
-				<h4 class="name">Acer JEQ0979832</h4>
-				<div class="code">Code: 278031</div>
-				<div class="price">$ 1670.00</div>
-				<a class="btn btn-primary pull-right buy-btn"
-					data-id-product="278031">Buy</a>
-				<div class="list-group">
-					<span class="list-group-item"> <small>Category:</small> <span
-						class="category">Tablet</span></span> <span class="list-group-item">
-						<small>Producer:</small> <span class="producer">Acer</span>
-					</span>
-				</div>
+				<div class="name">Product name</div>
+				<div class="code">Code: 27 000</div>
+				<div class="price">$ 550.00</div>
+				<a class="btn btn-primary pull-right buy-btn" data-id-product="5">Buy</a>
+				<ul class="list-group">
+					<li class="list-group-item"><small>Category:</small> <span
+						class="category">Smartphone</span></li>
+					<li class="list-group-item"><small>Producer:</small> <span
+						class="category">Apple</span></li>
+				</ul>
 			</div>
 		</div>
-		<!-- /PRODUCT DATA -->
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
-		<!-- PRODUCT DATA -->
-		<div id="product278039" class="panel panel-default product">
+		<div id="product6" class="panel panel-default product">
 			<div class="panel-body">
 				<div class="thumbnail">
-					<img src="/media/736d61727470686f6e65.jpg" alt="Samsung JL9994">
+					<img src="https://via.placeholder.com/400x400" alt="Product Name">
 					<div class="desc">
 						<div class="cell">
 							<p>
-								<span class="title">Details</span>Monitor diagonal 4.4" /
-								Camera: 3.2Mp / RAM: 1 Gb / Black / 1700 mA/h / Weight 800 g /
-								Bluetooth / 3G / FM receiver
+								<span class="title">Details</span> Monitor
 							</p>
 						</div>
 					</div>
 				</div>
-				<h4 class="name">Samsung JL9994</h4>
-				<div class="code">Code: 278039</div>
-				<div class="price">$ 1130.00</div>
-				<a class="btn btn-primary pull-right buy-btn"
-					data-id-product="278039">Buy</a>
-				<div class="list-group">
-					<span class="list-group-item"> <small>Category:</small> <span
-						class="category">Smartphone</span></span> <span class="list-group-item">
-						<small>Producer:</small> <span class="producer">Samsung</span>
-					</span>
-				</div>
+				<div class="name">Product name</div>
+				<div class="code">Code: 27 000</div>
+				<div class="price">$ 550.00</div>
+				<a class="btn btn-primary pull-right buy-btn" data-id-product="6">Buy</a>
+				<ul class="list-group">
+					<li class="list-group-item"><small>Category:</small> <span
+						class="category">Smartphone</span></li>
+					<li class="list-group-item"><small>Producer:</small> <span
+						class="category">Apple</span></li>
+				</ul>
 			</div>
 		</div>
-		<!-- /PRODUCT DATA -->
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
-		<!-- PRODUCT DATA -->
-		<div id="product378009" class="panel panel-default product">
+		<div id="product7" class="panel panel-default product">
 			<div class="panel-body">
 				<div class="thumbnail">
-					<img src="/media/736d61727470686f6e65.jpg" alt="Prestigio SH398187">
+					<img src="https://via.placeholder.com/400x400" alt="Product Name">
 					<div class="desc">
 						<div class="cell">
 							<p>
-								<span class="title">Details</span>Monitor diagonal 6.0" /
-								Camera: 3.2Mp / RAM: 4 Gb / Orange / 1100 mA/h / Weight 720 g /
-								WiFi / Bluetooth / Dictophone / USB
+								<span class="title">Details</span> Monitor
 							</p>
 						</div>
 					</div>
 				</div>
-				<h4 class="name">Prestigio SH398187</h4>
-				<div class="code">Code: 278009</div>
-				<div class="price">$ 570.00</div>
-				<a class="btn btn-primary pull-right buy-btn"
-					data-id-product="378009">Buy</a>
-				<div class="list-group">
-					<span class="list-group-item"> <small>Category:</small> <span
-						class="category">Smartphone</span></span> <span class="list-group-item">
-						<small>Producer:</small> <span class="producer">Prestigio</span>
-					</span>
-				</div>
+				<div class="name">Product name</div>
+				<div class="code">Code: 27 000</div>
+				<div class="price">$ 550.00</div>
+				<a class="btn btn-primary pull-right buy-btn" data-id-product="7">Buy</a>
+				<ul class="list-group">
+					<li class="list-group-item"><small>Category:</small> <span
+						class="category">Smartphone</span></li>
+					<li class="list-group-item"><small>Producer:</small> <span
+						class="category">Apple</span></li>
+				</ul>
 			</div>
 		</div>
-		<!-- /PRODUCT DATA -->
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
-		<!-- PRODUCT DATA -->
-		<div id="product378014" class="panel panel-default product">
+		<div id="product8" class="panel panel-default product">
 			<div class="panel-body">
 				<div class="thumbnail">
-					<img src="/media/652d626f6f6b.jpg" alt="EvroMedia NU6353951">
+					<img src="https://via.placeholder.com/400x400" alt="Product Name">
 					<div class="desc">
 						<div class="cell">
 							<p>
-								<span class="title">Details</span>Monitor diagonal 9" / Matrix
-								type: E lnk Pearl / Resolution: 1600x1200 / Memory 6 GB / Weight
-								190 g
+								<span class="title">Details</span> Monitor
 							</p>
 						</div>
 					</div>
 				</div>
-				<h4 class="name">EvroMedia NU6353951</h4>
-				<div class="code">Code: 278014</div>
-				<div class="price">$ 2710.00</div>
-				<a class="btn btn-primary pull-right buy-btn"
-					data-id-product="378014">Buy</a>
-				<div class="list-group">
-					<span class="list-group-item"> <small>Category:</small> <span
-						class="category">E-book</span></span> <span class="list-group-item">
-						<small>Producer:</small> <span class="producer">EvroMedia</span>
-					</span>
-				</div>
+				<div class="name">Product name</div>
+				<div class="code">Code: 27 000</div>
+				<div class="price">$ 550.00</div>
+				<a class="btn btn-primary pull-right buy-btn" data-id-product="8">Buy</a>
+				<ul class="list-group">
+					<li class="list-group-item"><small>Category:</small> <span
+						class="category">Smartphone</span></li>
+					<li class="list-group-item"><small>Producer:</small> <span
+						class="category">Apple</span></li>
+				</ul>
 			</div>
 		</div>
-		<!-- /PRODUCT DATA -->
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
-		<!-- PRODUCT DATA -->
-		<div id="product378018" class="panel panel-default product">
+		<div id="product9" class="panel panel-default product">
 			<div class="panel-body">
 				<div class="thumbnail">
-					<img src="/media/736d61727470686f6e65.jpg" alt="Huawei BIC2404">
+					<img src="https://via.placeholder.com/400x400" alt="Product Name">
 					<div class="desc">
 						<div class="cell">
 							<p>
-								<span class="title">Details</span>Monitor diagonal 4.4" /
-								Camera: 3.2Mp / RAM: 1 Gb / Blue / 1000 mA/h / Weight 320 g / 2
-								Sim cards / WiFi / USB / FM receiver / Dictophone / 3G
+								<span class="title">Details</span> Monitor
 							</p>
 						</div>
 					</div>
 				</div>
-				<h4 class="name">Huawei BIC2404</h4>
-				<div class="code">Code: 278018</div>
-				<div class="price">$ 370.00</div>
-				<a class="btn btn-primary pull-right buy-btn"
-					data-id-product="378018">Buy</a>
-				<div class="list-group">
-					<span class="list-group-item"> <small>Category:</small> <span
-						class="category">Smartphone</span></span> <span class="list-group-item">
-						<small>Producer:</small> <span class="producer">Huawei</span>
-					</span>
-				</div>
+				<div class="name">Product name</div>
+				<div class="code">Code: 27 000</div>
+				<div class="price">$ 550.00</div>
+				<a class="btn btn-primary pull-right buy-btn" data-id-product="9">Buy</a>
+				<ul class="list-group">
+					<li class="list-group-item"><small>Category:</small> <span
+						class="category">Smartphone</span></li>
+					<li class="list-group-item"><small>Producer:</small> <span
+						class="category">Apple</span></li>
+				</ul>
 			</div>
 		</div>
-		<!-- /PRODUCT DATA -->
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
-		<!-- PRODUCT DATA -->
-		<div id="product378026" class="panel panel-default product">
+		<div id="product10" class="panel panel-default product">
 			<div class="panel-body">
 				<div class="thumbnail">
-					<img src="/media/7461626c6574.jpg" alt="Apple QR35378150">
+					<img src="https://via.placeholder.com/400x400" alt="Product Name">
 					<div class="desc">
 						<div class="cell">
 							<p>
-								<span class="title">Details</span>Monitor 9" / RAM 3 GB / HDD
-								370 GB / Black / Weight 60 g / Bluetooth / 3G / USB / GPS
+								<span class="title">Details</span> Monitor
 							</p>
 						</div>
 					</div>
 				</div>
-				<h4 class="name">Apple QR35378150</h4>
-				<div class="code">Code: 278026</div>
-				<div class="price">$ 2630.00</div>
-				<a class="btn btn-primary pull-right buy-btn"
-					data-id-product="378026">Buy</a>
-				<div class="list-group">
-					<span class="list-group-item"> <small>Category:</small> <span
-						class="category">Tablet</span></span> <span class="list-group-item">
-						<small>Producer:</small> <span class="producer">Apple</span>
-					</span>
-				</div>
+				<div class="name">Product name</div>
+				<div class="code">Code: 27 000</div>
+				<div class="price">$ 550.00</div>
+				<a class="btn btn-primary pull-right buy-btn" data-id-product="10">Buy</a>
+				<ul class="list-group">
+					<li class="list-group-item"><small>Category:</small> <span
+						class="category">Smartphone</span></li>
+					<li class="list-group-item"><small>Producer:</small> <span
+						class="category">Apple</span></li>
+				</ul>
 			</div>
 		</div>
-		<!-- /PRODUCT DATA -->
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
-		<!-- PRODUCT DATA -->
-		<div id="product378031" class="panel panel-default product">
+		<div id="product11" class="panel panel-default product">
 			<div class="panel-body">
 				<div class="thumbnail">
-					<img src="/media/7461626c6574.jpg" alt="Acer JEQ0979832">
+					<img src="https://via.placeholder.com/400x400" alt="Product Name">
 					<div class="desc">
 						<div class="cell">
 							<p>
-								<span class="title">Details</span>Monitor 7" / RAM 4 GB / HDD
-								320 GB / Silver / Weight 260 g / HDMI / GPS / Bluetooth
+								<span class="title">Details</span> Monitor
 							</p>
 						</div>
 					</div>
 				</div>
-				<h4 class="name">Acer JEQ0979832</h4>
-				<div class="code">Code: 278031</div>
-				<div class="price">$ 1670.00</div>
-				<a class="btn btn-primary pull-right buy-btn"
-					data-id-product="378031">Buy</a>
-				<div class="list-group">
-					<span class="list-group-item"> <small>Category:</small> <span
-						class="category">Tablet</span></span> <span class="list-group-item">
-						<small>Producer:</small> <span class="producer">Acer</span>
-					</span>
-				</div>
+				<div class="name">Product name</div>
+				<div class="code">Code: 27 000</div>
+				<div class="price">$ 550.00</div>
+				<a class="btn btn-primary pull-right buy-btn" data-id-product="11">Buy</a>
+				<ul class="list-group">
+					<li class="list-group-item"><small>Category:</small> <span
+						class="category">Smartphone</span></li>
+					<li class="list-group-item"><small>Producer:</small> <span
+						class="category">Apple</span></li>
+				</ul>
 			</div>
 		</div>
-		<!-- /PRODUCT DATA -->
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
-		<!-- PRODUCT DATA -->
-		<div id="product378039" class="panel panel-default product">
+		<div id="product12" class="panel panel-default product">
 			<div class="panel-body">
 				<div class="thumbnail">
-					<img src="/media/736d61727470686f6e65.jpg" alt="Samsung JL9994">
+					<img src="https://via.placeholder.com/400x400" alt="Product Name">
 					<div class="desc">
 						<div class="cell">
 							<p>
-								<span class="title">Details</span>Monitor diagonal 4.4" /
-								Camera: 3.2Mp / RAM: 1 Gb / Black / 1700 mA/h / Weight 800 g /
-								Bluetooth / 3G / FM receiver
+								<span class="title">Details</span> Monitor
 							</p>
 						</div>
 					</div>
 				</div>
-				<h4 class="name">Samsung JL9994</h4>
-				<div class="code">Code: 278039</div>
-				<div class="price">$ 1130.00</div>
-				<a class="btn btn-primary pull-right buy-btn"
-					data-id-product="378039">Buy</a>
-				<div class="list-group">
-					<span class="list-group-item"> <small>Category:</small> <span
-						class="category">Smartphone</span></span> <span class="list-group-item">
-						<small>Producer:</small> <span class="producer">Samsung</span>
-					</span>
-				</div>
+				<div class="name">Product name</div>
+				<div class="code">Code: 27 000</div>
+				<div class="price">$ 550.00</div>
+				<a class="btn btn-primary pull-right buy-btn" data-id-product="12">Buy</a>
+				<ul class="list-group">
+					<li class="list-group-item"><small>Category:</small> <span
+						class="category">Smartphone</span></li>
+					<li class="list-group-item"><small>Producer:</small> <span
+						class="category">Apple</span></li>
+				</ul>
 			</div>
 		</div>
-		<!-- /PRODUCT DATA -->
 	</div>
 </div>

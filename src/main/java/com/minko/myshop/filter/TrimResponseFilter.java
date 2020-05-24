@@ -20,7 +20,7 @@ public class TrimResponseFilter extends AbstractFilter{
 			throws IOException, ServletException {
 		TrimResponse response = new TrimResponse(resp);
 		chain.doFilter(req, response);
-		response.complete();
+		response.trimComplete();
 		System.out.println();
 	}
 	
@@ -45,16 +45,16 @@ public class TrimResponseFilter extends AbstractFilter{
 					return false;
 				}
 				@Override
-				public void setWriteListener(WriteListener writeListener) {	
-				}
-				@Override
 				public void write(int b) throws IOException {
 					trimProxyWriter.write(b);
+				}
+				@Override
+				public void setWriteListener(WriteListener writeListener) {
 				}
 			};
 		}
 		
-		private void complete() throws IOException {
+		private void trimComplete() throws IOException {
 			setContentLength(trimProxyWriter.getLength());
 			trimProxyWriter.complete();
 		}

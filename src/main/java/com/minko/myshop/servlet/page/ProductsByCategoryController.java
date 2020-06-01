@@ -12,19 +12,22 @@ import com.minko.myshop.Constants;
 import com.minko.myshop.entity.Product;
 import com.minko.myshop.servlet.AbstractController;
 
-@WebServlet("/products")
-public class AllProductsController extends AbstractController{
+@WebServlet("/products/*")
+public class ProductsByCategoryController extends AbstractController {
 
-	private static final long serialVersionUID = 6696788607397758290L;
+	private static final long serialVersionUID = 8263857220032001984L;
+	private static final int SUBSTRING_INDEX = "/products".length();
 	
-	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Product> products = getProductService().listAllProducts(1, Constants.MAX_PRODUCTS_PER_PAGE);
+		String categoryUrl = req.getRequestURI().substring(SUBSTRING_INDEX);
+		List<Product> products = getProductService().listProductsByCategory(categoryUrl, 1, Constants.MAX_PRODUCTS_PER_PAGE);
 		req.setAttribute("products", products);
-		int totalItems = getProductService().countAllProducts();
+		int totalItems = getProductService().countProductsByCategory(categoryUrl);
+		System.out.println(totalItems);
 		req.setAttribute("pageCount", getPageCount(totalItems, Constants.MAX_PRODUCTS_PER_PAGE));
+		req.setAttribute("selectedCategoryUrl", categoryUrl);
 		req.setAttribute("currentPage", "page/products.jsp");
 		req.getRequestDispatcher("/WEB-INF/JSP/page-template.jsp").forward(req, resp);
 	}
-
+	
 }

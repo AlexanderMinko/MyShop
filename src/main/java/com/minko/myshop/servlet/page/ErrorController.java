@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.minko.myshop.servlet.AbstractController;
-import com.minko.myshop.util.RoutingUtils;
 
 @WebServlet("/error")
 public class ErrorController extends AbstractController {
@@ -17,7 +16,8 @@ public class ErrorController extends AbstractController {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		RoutingUtils.forwardToPage("error.jsp", req, resp);
+		//req.setAttribute("currentPage", "page/error.jsp");
+		req.getRequestDispatcher("WEB-INF/JSP/page/error.jsp").forward(req, resp);
 	}
 
 }

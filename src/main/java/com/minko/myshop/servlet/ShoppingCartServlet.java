@@ -45,7 +45,7 @@ public class ShoppingCartServlet extends HttpServlet {
 	protected void addProduct(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		ShoppingCart shoppingCart = SessionUtils.getCurrentShoppingCart(req);
 		Random r = new Random();
-		shoppingCart.addProduct(r.nextInt(2), r.nextInt(1)+1);
+//		shoppingCart.addProduct(r.nextInt(2), r.nextInt(1)+1);
 	}
 	
 	protected void sync(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -64,9 +64,9 @@ public class ShoppingCartServlet extends HttpServlet {
 	
 	protected String shoppingCartToString(ShoppingCart shoppingCart) {
 		StringBuilder res = new StringBuilder();
-		for (ShoppingCartItem shoppingCartItem : shoppingCart.getItems()) {
-			res.append(shoppingCartItem.getIdProduct()).append("-").append(shoppingCartItem.getCount()).append("|");
-		}
+//		for (ShoppingCartItem shoppingCartItem : shoppingCart.getItems()) {
+//			res.append(shoppingCartItem.getIdProduct()).append("-").append(shoppingCartItem.getCount()).append("|");
+//		}
 		if (res.length() > 0) {
 			res.deleteCharAt(res.length() - 1);
 		}
@@ -81,7 +81,7 @@ public class ShoppingCartServlet extends HttpServlet {
 			try {
 				int idProduct = Integer.parseInt(data[0]);
 				int count = Integer.parseInt(data[1]);
-				shoppingCart.addProduct(idProduct, count);
+//				shoppingCart.addProduct(idProduct, count);
 			} catch (RuntimeException e) {
 				e.printStackTrace();
 			}

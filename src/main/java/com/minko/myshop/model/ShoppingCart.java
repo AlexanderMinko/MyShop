@@ -1,28 +1,25 @@
 package com.minko.myshop.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.minko.myshop.Constants;
-import com.minko.myshop.exception.ValidationException;
+import com.minko.myshop.entity.Product;
 
 public class ShoppingCart implements Serializable {
 	private static final long serialVersionUID = -3317823083682018262L;
 	private Map<Integer, ShoppingCartItem> products = new HashMap<>();
 	private int totalCount = 0;
+	private BigDecimal totalCost = BigDecimal.ZERO;
 	
-	public void addProduct(int idProduct, int count) {
-		validateShoppingCartSize(idProduct);
-		ShoppingCartItem shoppingCartItem = products.get(idProduct);
-		System.out.println(shoppingCartItem);
+	public void addProduct(Product product, int count) {
+		ShoppingCartItem shoppingCartItem = products.get(product.getId());
 		if(shoppingCartItem == null) {
-			validateProductCount(count);
-			shoppingCartItem = new ShoppingCartItem(idProduct, count);
-			products.put(idProduct, shoppingCartItem);
+			shoppingCartItem = new ShoppingCartItem(product, count);
+			products.put(product.getId(), shoppingCartItem);
 		}else {
-			validateProductCount(count + shoppingCartItem.getCount());
 			shoppingCartItem.setCount(shoppingCartItem.getCount() + count);
 		}
 		refreshStatistics();
@@ -39,29 +36,18 @@ public class ShoppingCart implements Serializable {
 		}
 		refreshStatistics();
 	}
-
-	private void refreshStatistics() {
-		totalCount = 0;
-		for(ShoppingCartItem shoppigCartItem : getItems()) {
-			totalCount += shoppigCartItem.getCount();
-		}
+	
+	public Collection<ShoppingCartItem> getItems(){
+		return products.values();
 		
 	}
 
-	public Collection<ShoppingCartItem> getItems() {
-		return products.values();
-	}
-
-	private void validateProductCount(int count) {
-		if(count > Constants.MAX_PRODUCT_COUNT_PER_SHOPPING_CART){
-			throw new ValidationException("Limit for product count reached: count = " + count);
-		}
-	}
-
-	private void validateShoppingCartSize(int idProduct) {
-		if(products.size() > Constants.MAX_PRODUCTS_PER_SHOPPING_CART ||
-		(products.size() == Constants.MAX_PRODUCTS_PER_SHOPPING_CART && !products.containsKey(idProduct))) {
-			throw new ValidationException("Limit for ShoppingCart size reached: size = " + products.size());
+	private void refreshStatistics() {
+		totalCount = 0;
+		totalCost = BigDecimal.ZERO;
+		for(ShoppingCartItem shoppigCartItem : products.values()) {
+			totalCount += shoppigCartItem.getCount();
+			totalCost = totalCost.add(shoppigCartItem.getProduct().getPrice().multiply(BigDecimal.valueOf(shoppigCartItem.getCount())));
 		}
 		
 	}
@@ -69,13 +55,22 @@ public class ShoppingCart implements Serializable {
 	public int getTotalCount() {
 		return totalCount;
 	}
-
+	
 	public void setTotalCount(int totalCount) {
 		this.totalCount = totalCount;
 	}
-	
+
+	public BigDecimal getTotalCost() {
+		return totalCost;
+	}
+
+	public void setTotalCost(BigDecimal totalCost) {
+		this.totalCost = totalCost;
+	}
+
 	@Override
 	public String toString() {
-		return String.format("ShoppingCart [products=%s, totalCount=%s]", products, totalCount);
+		return String.format("ShoppingCart [products=%s, totalCount=%s, totalCost=%s]", products, totalCount, totalCost);
 	}
+
 }

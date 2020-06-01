@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.minko.myshop.Constants;
 import com.minko.myshop.service.impl.ServiceManager;
 
 @WebListener
@@ -17,6 +18,8 @@ public class MyShopApplicationListener implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent sce) {
 		try {
 			serviceManager = ServiceManager.getInstance(sce.getServletContext());
+			sce.getServletContext().setAttribute(Constants.PRODUCERS, serviceManager.getProductService().listAllProducers());
+			sce.getServletContext().setAttribute(Constants.CATEGORIES, serviceManager.getProductService().listAllCategories());
 		} catch (RuntimeException e) {
 			LOGGER.error("Web application 'myshop' init failed: " + e.getMessage(), e);
 			throw e;

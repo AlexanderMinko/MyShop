@@ -19,10 +19,10 @@ isELIgnored="false" trimDirectiveWhitespaces="true"%>
 	<div class="container-fluid">
 		<div class="row">
 			<aside class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
-				<jsp:include page="fragment/aside.jsp"/>	
+				<jsp:include page="fragment/aside.jsp"/>
 			</aside>
 			<main class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
-				<jsp:include page="fragment/product-list.jsp"/>
+				<jsp:include page="${currentPage}"/>
 			</main>
 		</div>
 	</div>

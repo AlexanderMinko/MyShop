@@ -2,6 +2,5 @@
 isELIgnored="false" trimDirectiveWhitespaces="true"%>
 
 <div class="container">
-	<p class="text-center">MyShop by dev Minko Alexander, 2020 &#174;
-	All rights reserved</p>
+	<p class="text-center">MyShop by dev Minko Alexander, 2020 &#174; All rights reserved</p>
 </div>

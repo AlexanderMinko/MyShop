@@ -4,18 +4,24 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.minko.myshop.form.ProductForm;
 import com.minko.myshop.form.SearchForm;
 import com.minko.myshop.service.OrderService;
 import com.minko.myshop.service.ProductService;
+import com.minko.myshop.service.SocialService;
 import com.minko.myshop.service.impl.ServiceManager;
 
 public class AbstractController extends HttpServlet{
 
 	private static final long serialVersionUID = 8618938402091288198L;
+	protected final Logger LOGGER = LoggerFactory.getLogger(getClass());
 	
 	private ProductService productService;
 	private OrderService orderService;
+	private SocialService socialService;
 	
 	public ProductService getProductService() {
 		return productService;
@@ -25,6 +31,11 @@ public class AbstractController extends HttpServlet{
 		return orderService;
 	}
 	
+	
+	public SocialService getSocialService() {
+		return socialService;
+	}
+
 	public final int getPageCount(int totalItems, int itemsPerPage) {
 		int result = totalItems / itemsPerPage;
 		if(result * itemsPerPage != totalItems) {
@@ -45,6 +56,7 @@ public class AbstractController extends HttpServlet{
 	public final void init() throws ServletException {
 		productService = ServiceManager.getInstance(getServletContext()).getProductService();
 		orderService = ServiceManager.getInstance(getServletContext()).getOrderService();
+		socialService = ServiceManager.getInstance(getServletContext()).getSocialService();
 	}
 	
 	public final SearchForm createSearchForm(HttpServletRequest request) {

@@ -115,7 +115,6 @@ class ProductServiceImpl implements ProductService {
 		ResultSet rs = null;
 		try (Connection con = dataSource.getConnection()) {
 			ps = con.prepareStatement(SELECT_ALL_PRODUCERS);
-			System.out.println(SELECT_ALL_PRODUCERS + " 112page");
 			rs = ps.executeQuery();
 			while (rs.next()) {
 				Producer p = new Producer();

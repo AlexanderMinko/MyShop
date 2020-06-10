@@ -7,6 +7,7 @@
 		selectAllCheck();
 		$('#goSearch').click(goSearch);
 		$('.remove-product').click(removeProductFromCart);
+		$('#loadMoreOrders').on('click', loadMoreOrders);
 	};
 
 	var showAddProductPopup = function() {
@@ -59,11 +60,44 @@
 					$('#loadMore').remove();
 					$('#loadMoreIndicator').remove();
 				}
+				initBuyBtn();
 			},
 			error : function(data){
 				$('#loadMoreIndicator').addClass('hidden');
 				$('#loadMore').removeClass('hidden');
 				alert('Error');
+			}
+		});
+	};
+	
+	var loadMoreOrders = function(){
+		$('#loadMoreOrders').addClass('hidden');
+		$('#loadMoreIndicator').removeClass('hidden');
+		var pageCurrent = parseInt($('#myOrders').attr('data-page-current'));
+		var url = '/ajax/html/more/my-orders?page=' + (pageCurrent+1);
+		$.ajax({
+			url : url ,
+			success : function(html) {
+				$('#myOrders tbody').append(html);
+				pageCurrent = pageCurrent + 1;
+				var pageCount = parseInt($('#myOrders').attr('data-page-count'));
+				$('#myOrders').attr('data-page-current', pageCurrent);
+				if(pageCurrent < pageCount){	
+					$('#loadMoreIndicator').addClass('hidden');
+					$('#loadMoreOrders').removeClass('hidden');
+				} else {
+					$('#loadMoreOrders').remove();
+					$('#loadMoreIndicator').remove();
+				}
+			},
+			error : function(xhr){
+				$('#loadMoreIndicator').addClass('hidden');
+				$('#loadMore').removeClass('hidden');
+				if(xhr.status == 401){
+					window.location.href = '/sign-in';
+				} else {
+					alert('Error');
+				}		
 			}
 		});
 	};
@@ -106,9 +140,9 @@
 		$('form.search').submit();
 	};
 
-	var confirm = function(msg, okFunction){
+	var confirm = function(msg, removeFunction){
 		if(window.confirm(msg)){
-			okFunction();
+			removeFunction();
 		}	
 	};
 
@@ -201,31 +235,5 @@
 			}
 		});
 	};
-		
-//		setTimeout(function(){
-//			var data = {
-//				totalCount : count,
-//				totalCost : cost
-//			};
-//			if($('#shoppingCart .item').length === 1){
-//				window.location.href = '/products';
-//			}else{
-//				var removeCount = parseInt(count);
-//				var result = currentCount - removeCount;
-//				btn.removeClass('load-indicator');
-//				btn.addClass('btn-danger');
-//				btn.addClass('btn');
-//				btn.text(str);
-//				if(result <= 0){
-//					$('#product' + idProduct).remove();
-//				} else {
-//					$('#product' + idProduct + ' .count').text(result);
-//				}
-//
-//			}refreshTotalCost();
-//				
-//		}, 800);
-
-	
 	init();
 });

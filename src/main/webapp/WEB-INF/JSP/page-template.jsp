@@ -16,7 +16,7 @@ isELIgnored="false" trimDirectiveWhitespaces="true"%>
 	<header>
 		<jsp:include page="fragment/header.jsp"/>
 	</header>
-	<div class="container-fluid">
+	<div class="container-fluid contant">
 		<div class="row">
 			<aside class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
 				<jsp:include page="fragment/aside.jsp"/>

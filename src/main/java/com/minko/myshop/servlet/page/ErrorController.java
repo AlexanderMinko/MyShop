@@ -16,8 +16,9 @@ public class ErrorController extends AbstractController {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//req.setAttribute("currentPage", "page/error.jsp");
-		req.getRequestDispatcher("WEB-INF/JSP/page/error.jsp").forward(req, resp);
+		req.setAttribute("statusCode", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+		req.setAttribute("currentPage", "page/error.jsp");
+		req.getRequestDispatcher("/WEB-INF/JSP/page-template.jsp").forward(req, resp);
 	}
 
 }

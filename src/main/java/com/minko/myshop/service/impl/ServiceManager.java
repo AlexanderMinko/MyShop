@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 
 import com.minko.myshop.service.OrderService;
 import com.minko.myshop.service.ProductService;
+import com.minko.myshop.service.SocialService;
 
 public class ServiceManager {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ServiceManager.class);
@@ -21,12 +22,14 @@ public class ServiceManager {
 	private final BasicDataSource dataSource;
 	private final ProductService productService;
 	private final OrderService orderService;
+	private final SocialService socialService;
 	
 	private ServiceManager(ServletContext context) {
 		loadApplicationProperties();
 		dataSource = createDataSource();
 		productService = new ProductServiceImpl(dataSource);
 		orderService = new OrderServiceImpl(dataSource);
+		socialService = new FacebookSocialService(this);
 	}
 	
 	public static ServiceManager getInstance(ServletContext context) {
@@ -46,6 +49,10 @@ public class ServiceManager {
 		return orderService;
 	}
 	
+	public SocialService getSocialService() {
+		return socialService;
+	}
+
 	public String getApplecationProperty(String key) {
 		return applicationProperties.getProperty(key);	
 	}

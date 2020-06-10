@@ -15,8 +15,7 @@
 				<a data-toggle="collapse" href="#serchOptions">More filters<span class="caret"></span></a>
 			</div>
 		</div>
-		<div id="serchOptions" class="collapse ${!searchForm.categoriesEmpty or !searchForm.producersEmpty ? 'in' : ''}">
-			<!--pullout menu filters-->
+		<div id="serchOptions" class="collapse ${searchForm.categoriesNotEmpty or searchForm.producersNotEmpty ? 'in' : ''}">
 			<div class="panel-heading">Category filters</div>
 			<div class="panel-body categories">
 				<!--CATEGORIES-->
@@ -30,7 +29,6 @@
 					</c:forEach>
 				</div>
 			</div>
-			<!--/CATEGORIES-->
 			<div class="panel-heading">Producers filters</div>
 			<div class="panel-body producers">
 				<label><input type="checkbox" id="allProducers">All</label>
@@ -45,7 +43,6 @@
 				
 			</div>
 		</div>
-		<!--/pullout menu filters-->
 	</div>
 	</form>
 <div id="productCatalog" class="panel panel-success collapse">

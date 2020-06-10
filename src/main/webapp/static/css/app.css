@@ -83,6 +83,11 @@
 }
 
 
+
+.dropdown-toggle{
+	margin-left: 13px;
+}
+
 .list-group {
 	margin: 0;
 }
@@ -98,6 +103,20 @@
 		float: left;
 		width: 16.6667%
 	}
+}
+
+html, body {
+    min-height: 100vh;
+}
+
+body{
+	display: flex;
+	flex-direction: column;
+}
+
+.contant {
+    flex-grow: 1;
+    width: 100%;
 }
 
 footer{
@@ -158,7 +177,8 @@ footer{
 	margin-right: 10px;
 }
 
-#shoppingCart img{
+#shoppingCart img,
+#order img{
 	max-height: 80px;
 	margin: 0 auto;
 	display: block;

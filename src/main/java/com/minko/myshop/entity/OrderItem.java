@@ -13,6 +13,9 @@ public class OrderItem extends AbstractEntity<Long> {
 		this.count = count;
 	}
 
+	public OrderItem() {
+	}
+
 	public Long getIdOrder() {
 		return idOrder;
 	}

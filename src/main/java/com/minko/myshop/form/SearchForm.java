@@ -29,12 +29,12 @@ public class SearchForm {
 		}
 	}
 	
-	public boolean isCategoriesEmpty() {
-		return categories.isEmpty();
+	public boolean isCategoriesNotEmpty() {
+		return !categories.isEmpty();
 	}
 	
-	public boolean isProducersEmpty() {
-		return producers.isEmpty();
+	public boolean isProducersNotEmpty() {
+		return !producers.isEmpty();
 	}
 
 	public String getQuery() {
